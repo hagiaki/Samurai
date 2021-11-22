@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour//MonoBehaviorÇÃíÜêgÇåpè≥
 {
-    private float speed = 0.1f;
+    private float speed = 5.0f;
     public float bulletspeed;
     public bool hit = false;
     public GameObject PlayerObject;
@@ -28,21 +28,25 @@ public class Player : MonoBehaviour//MonoBehaviorÇÃíÜêgÇåpè≥
     // Update is called once per frame
     void Update()
     {
+        Vector3 movedirection = new Vector3(0, 0, 0);
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += new Vector3(0, speed, 0);
+            movedirection.y = 1;
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position += new Vector3(0, -speed, 0);
+            movedirection.y = -1;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += new Vector3(speed, 0, 0);
+            movedirection.x = 1;
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += new Vector3(-speed, 0, 0);
+            movedirection.x = -1;
         }
+        movedirection.Normalize();
+        movedirection *= speed * Time.deltaTime;
+        transform.position += movedirection;
     }
 }
