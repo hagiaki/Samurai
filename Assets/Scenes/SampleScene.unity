@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 113150686}
   - component: {fileID: 113150685}
   - component: {fileID: 113150684}
-  - component: {fileID: 113150689}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -159,6 +158,9 @@ MonoBehaviour:
   bulletspeed: 0
   hit: 0
   PlayerObject: {fileID: 113150683}
+  power: 1000
+  bullet: {fileID: 3423769313138262322, guid: 8306785b1faec544195527d73c02e9bc, type: 3}
+  spawnpoint: {fileID: 113150688}
 --- !u!135 &113150685
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -235,21 +237,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &113150689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113150683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76962dc0045220a4aadb63e5d3a40528, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 1000
-  bullet: {fileID: 3423769313138262322, guid: 8306785b1faec544195527d73c02e9bc, type: 3}
-  spawnpoint: {fileID: 113150688}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

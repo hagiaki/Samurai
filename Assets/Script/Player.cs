@@ -8,15 +8,20 @@ public class Player : MonoBehaviour//MonoBehavior‚Ì’†g‚ğŒp³
     public float bulletspeed;
     public bool hit = false;
     public GameObject PlayerObject;
+    public float power = 1000f;
+    public GameObject bullet;
+    public Transform spawnpoint;
 
     void Move()
     {
         
     }
 
-    void Shot()
+    void shot()
     {
-
+        GameObject newbullet = Instantiate(bullet, spawnpoint.position, Quaternion.identity) as GameObject;
+        newbullet.GetComponent<Rigidbody>().AddForce(Vector3.right * power);
+        Destroy(newbullet, 1.0f);
     }
 
     // Start is called before the first frame update
@@ -48,5 +53,10 @@ public class Player : MonoBehaviour//MonoBehavior‚Ì’†g‚ğŒp³
         movedirection.Normalize();
         movedirection *= speed * Time.deltaTime;
         transform.position += movedirection;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            shot();
+        }
     }
 }
