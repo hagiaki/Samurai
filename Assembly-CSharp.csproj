@@ -57,6 +57,9 @@
     <Compile Include="Assets\Script\Shell.cs" />
     <Compile Include="Assets\Script\PlayerSource.cs" />
     <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\Script\Status.cs" />
+    <Compile Include="Assets\Script\Enemy.cs" />
+    <Compile Include="Assets\Script\EnemysShell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

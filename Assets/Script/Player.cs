@@ -2,27 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour//MonoBehavior‚Ì’†g‚ğŒp³
+public class Player : Status//MonoBehavior‚Ì’†g‚ğŒp³
 {
-    private float speed = 5.0f;
+    /*public float speed = 5.0f;
     public float bulletspeed;
     public bool hit = false;
     public GameObject PlayerObject;
     public float power = 1000f;
-    public GameObject bullet;
-    public Transform spawnpoint;
+    public GameObject bullet;*/
 
     void Move()
     {
         
     }
 
-    void shot()
-    {
-        GameObject newbullet = Instantiate(bullet, spawnpoint.position, Quaternion.identity) as GameObject;
-        newbullet.GetComponent<Rigidbody>().AddForce(Vector3.right * power);
-        Destroy(newbullet, 1.0f);
-    }
+    
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +50,9 @@ public class Player : MonoBehaviour//MonoBehavior‚Ì’†g‚ğŒp³
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            shot();
+
+           shot();
         }
     }
+    
 }
