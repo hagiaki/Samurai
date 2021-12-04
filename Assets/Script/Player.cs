@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Status//MonoBehavior‚Ì’†g‚ğŒp³
+public class Player : BaseCharacter//MonoBehavior‚Ì’†g‚ğŒp³
 {
     /*public float speed = 5.0f;
     public float bulletspeed;

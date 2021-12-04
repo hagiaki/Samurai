@@ -53,13 +53,13 @@
     <UnityVersion>2020.3.4f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\BaseCharacter.cs" />
+    <Compile Include="Assets\Script\Enemy.cs" />
     <Compile Include="Assets\Script\MainGame.cs" />
+    <Compile Include="Assets\Script\EnemysShell.cs" />
     <Compile Include="Assets\Script\Shell.cs" />
     <Compile Include="Assets\Script\PlayerSource.cs" />
     <Compile Include="Assets\Script\Player.cs" />
-    <Compile Include="Assets\Script\Status.cs" />
-    <Compile Include="Assets\Script\Enemy.cs" />
-    <Compile Include="Assets\Script\EnemysShell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
