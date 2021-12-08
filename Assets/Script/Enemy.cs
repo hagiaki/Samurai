@@ -4,22 +4,36 @@ using UnityEngine;
 
 public class Enemy : BaseCharacter
 {
-    
+    private const float shotRate = 0.5f;//å≈íËÇÃíl
+    private float shotRealTime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        team = Team.ENEMY;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        shotRealTime += Time.deltaTime;
+        if (shotRealTime >= shotRate)
+        {
+            shot(Direction.LEFT);
+            shotRealTime = 0;
+        }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)//ìñÇΩÇ¡ÇΩèuä‘ÇÃèàóù
     {
-        Destroy(this.gameObject);
+        Shell shell = other.GetComponent<Shell>();
+        if (shell == null)
+        {
+            return;
+        }
+        if (shell.getTeam() != GetTeam())//é©ï™ÇÃTeamÇ≈ÇÕÇ»Ç©Ç¡ÇΩèÍçá
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

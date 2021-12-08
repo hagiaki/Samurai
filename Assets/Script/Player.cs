@@ -11,17 +11,10 @@ public class Player : BaseCharacter//MonoBehavior‚Ì’†g‚ğŒp³
     public float power = 1000f;
     public GameObject bullet;*/
 
-    void Move()
-    {
-        
-    }
-
-    
-
     // Start is called before the first frame update
     void Start()
     {
-        
+        team = Team.PLAYER;
     }
 
     // Update is called once per frame
@@ -50,9 +43,25 @@ public class Player : BaseCharacter//MonoBehavior‚Ì’†g‚ğŒp³
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
-           shot();
+           shot(Direction.RIGHT);
         }
     }
-    
+
+    private void OnTriggerEnter(Collider other)//“–‚½‚Á‚½uŠÔ‚Ìˆ—
+    { 
+
+        Shell shell = other.GetComponent<Shell>();
+        if (shell == null)
+        {
+            return;
+        }
+        if (shell.getTeam() != GetTeam())//©•ª‚ÌTeam‚Å‚Í‚È‚©‚Á‚½ê‡
+        {
+            life -= 1;
+            if (life <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+    }
 }
