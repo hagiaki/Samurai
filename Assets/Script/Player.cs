@@ -47,7 +47,7 @@ public class Player : BaseCharacter//MonoBehavior‚Ì’†g‚ğŒp³
         }
     }
 
-    private void OnTriggerEnter(Collider other)//“–‚½‚Á‚½uŠÔ‚Ìˆ—
+    /*private void OnTriggerEnter(Collider other)//“–‚½‚Á‚½uŠÔ‚Ìˆ—
     { 
 
         Shell shell = other.GetComponent<Shell>();
@@ -63,5 +63,5 @@ public class Player : BaseCharacter//MonoBehavior‚Ì’†g‚ğŒp³
                 Destroy(this.gameObject);
             }
         }
-    }
+    }*/
 }

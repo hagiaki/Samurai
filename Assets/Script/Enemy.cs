@@ -24,16 +24,5 @@ public class Enemy : BaseCharacter
         }
     }
 
-    private void OnTriggerEnter(Collider other)//“–‚½‚Á‚½uŠÔ‚Ìˆ—
-    {
-        Shell shell = other.GetComponent<Shell>();
-        if (shell == null)
-        {
-            return;
-        }
-        if (shell.getTeam() != GetTeam())//©•ª‚ÌTeam‚Å‚Í‚È‚©‚Á‚½ê‡
-        {
-            Destroy(this.gameObject);
-        }
-    }
+    
 }

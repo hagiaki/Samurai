@@ -10,7 +10,7 @@ public class BaseCharacter : MonoBehaviour
     protected float power = 1000f;
     public GameObject bullet;
     protected Team team;
-    protected int life = 3;
+    public int life = 3;
 
     public enum Direction{
         RIGHT,
@@ -40,5 +40,22 @@ public class BaseCharacter : MonoBehaviour
     public Team GetTeam()
     {
         return team;
+    }
+
+    public void OnTriggerEnter(Collider other)//“–‚½‚Á‚½uŠÔ‚Ìˆ—
+    {
+        Shell shell = other.GetComponent<Shell>();
+        if (shell == null)
+        {
+            return;
+        }
+        if (shell.getTeam() != GetTeam())//©•ª‚ÌTeam‚Å‚Í‚È‚©‚Á‚½ê‡
+        {
+            life -= 1;
+            if (life <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
 }
