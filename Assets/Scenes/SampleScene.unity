@@ -159,7 +159,7 @@ MonoBehaviour:
   hit: 0
   PlayerObject: {fileID: 113150683}
   bullet: {fileID: 3423769313138262322, guid: 8306785b1faec544195527d73c02e9bc, type: 3}
-  life: 3
+  life: 15
 --- !u!135 &113150685
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -567,4 +567,4 @@ MonoBehaviour:
   hit: 0
   PlayerObject: {fileID: 1809255853}
   bullet: {fileID: 3423769313138262322, guid: 8306785b1faec544195527d73c02e9bc, type: 3}
-  life: 1
+  life: 10

@@ -11,6 +11,7 @@ public class BaseCharacter : MonoBehaviour
     public GameObject bullet;
     protected Team team;
     public int life = 3;
+    protected int damage = 5;
 
     public enum Direction{
         RIGHT,
@@ -51,7 +52,7 @@ public class BaseCharacter : MonoBehaviour
         }
         if (shell.getTeam() != GetTeam())//©•ª‚ÌTeam‚Å‚Í‚È‚©‚Á‚½ê‡
         {
-            life -= 1;
+            life -= damage;
             if (life <= 0)
             {
                 Destroy(this.gameObject);
