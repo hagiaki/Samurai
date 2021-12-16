@@ -11,7 +11,9 @@ public class BaseCharacter : MonoBehaviour
     public GameObject bullet;
     protected Team team;
     public int life = 3;
-    protected int damage = 5;
+
+    [SerializeField]//public‚Å‚È‚­‚Ä‚àinspecter‚É•\¦‚Å‚«‚é
+    protected int attack = 5;
 
     public enum Direction{
         RIGHT,
@@ -27,6 +29,7 @@ public class BaseCharacter : MonoBehaviour
         GameObject newbullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;//ƒƒ‚ƒŠ‚ÌêŠ‚ÌŠm•Û(’eA”­¶êŠAp¨§Œä)Œ^‚ğ‘µ‚¦‚é
         Shell shell = newbullet.GetComponent<Shell>();
         shell.setTeam(GetTeam());
+        shell.setAttack(attack);
 
         switch(direction){
             case Direction.RIGHT:
@@ -52,7 +55,7 @@ public class BaseCharacter : MonoBehaviour
         }
         if (shell.getTeam() != GetTeam())//©•ª‚ÌTeam‚Å‚Í‚È‚©‚Á‚½ê‡
         {
-            life -= damage;
+            life -= shell.getAttack();
             if (life <= 0)
             {
                 Destroy(this.gameObject);

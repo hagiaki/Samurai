@@ -9,6 +9,7 @@ public class Shell : MonoBehaviour
     public GameObject bullet;
     public Transform spawnpoint;
     public float lifeTime = 1.0f;
+    protected int mAttack;
     bool isAddForce = false;
     private Vector3 direction;
     protected BaseCharacter.Team mTeam;
@@ -42,6 +43,16 @@ public class Shell : MonoBehaviour
     public Team getTeam()
     {
         return mTeam;
+    }
+
+    public void setAttack(int attack)
+    {
+        mAttack = attack;
+    }
+
+    public int getAttack()
+    {
+        return mAttack;
     }
 }
 /*newbullet.GetComponent<Rigidbody>().AddForce(Vector3.right * power);

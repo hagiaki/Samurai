@@ -60,6 +60,10 @@
     <Compile Include="Assets\Script\Shell.cs" />
     <Compile Include="Assets\Script\PlayerSource.cs" />
     <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\Script\BaseBackGround.cs" />
+    <Compile Include="Assets\Script\FrontBack.cs" />
+    <Compile Include="Assets\Script\MiddleBack.cs" />
+    <Compile Include="Assets\Script\Back.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
