@@ -10,7 +10,11 @@ public class BaseCharacter : MonoBehaviour
     protected float power = 1000f;
     public GameObject bullet;
     protected Team team;
+    protected float _length = 1;
+    protected float amplitude = 5.0f;
+    protected int period = 3;
     public int life = 3;
+    public float lifeTime = 64.0f;
 
     [SerializeField]//public‚Å‚È‚­‚Ä‚àinspecter‚É•\Ž¦‚Å‚«‚é
     protected int attack = 5;

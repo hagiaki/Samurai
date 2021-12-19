@@ -22,6 +22,12 @@ public class Enemy : BaseCharacter
             shot(Direction.LEFT);
             shotRealTime = 0;
         }
+        transform.position -= transform.right * speed * Time.deltaTime;
+        lifeTime -= Time.deltaTime;
+        if (lifeTime <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     

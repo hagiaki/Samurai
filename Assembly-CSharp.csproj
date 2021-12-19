@@ -56,14 +56,17 @@
     <Compile Include="Assets\Script\BaseCharacter.cs" />
     <Compile Include="Assets\Script\Enemy.cs" />
     <Compile Include="Assets\Script\MainGame.cs" />
+    <Compile Include="Assets\Script\BaseBackGround.cs" />
     <Compile Include="Assets\Script\EnemysShell.cs" />
+    <Compile Include="Assets\Script\MiddleBack.cs" />
+    <Compile Include="Assets\Script\FrontBack.cs" />
     <Compile Include="Assets\Script\Shell.cs" />
     <Compile Include="Assets\Script\PlayerSource.cs" />
     <Compile Include="Assets\Script\Player.cs" />
-    <Compile Include="Assets\Script\BaseBackGround.cs" />
-    <Compile Include="Assets\Script\FrontBack.cs" />
-    <Compile Include="Assets\Script\MiddleBack.cs" />
     <Compile Include="Assets\Script\Back.cs" />
+    <Compile Include="Assets\Script\Ground1.cs" />
+    <Compile Include="Assets\Script\Ground2.cs" />
+    <Compile Include="Assets\Script\SpawnEnemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
