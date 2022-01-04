@@ -1997,6 +1997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 834900766044590813, guid: d68401537f43a4248b6382b6dbdb26b9, type: 3}
   dx: 17
+  csvFile: {fileID: 4900000, guid: 8c9a027592c128c488da75cee710f5d3, type: 3}
 --- !u!4 &1936750917
 Transform:
   m_ObjectHideFlags: 0

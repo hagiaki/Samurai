@@ -28,6 +28,11 @@ public class BaseCharacter : MonoBehaviour
         ENEMY
     }
 
+    public enum Height{
+        UP,
+        DOWN
+    }
+
     protected void shot(Direction direction)
     {
         GameObject newbullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;//ƒƒ‚ƒŠ‚ÌêŠ‚ÌŠm•Û(’eA”­¶êŠAp¨§Œä)Œ^‚ğ‘µ‚¦‚é
