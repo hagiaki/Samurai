@@ -5,10 +5,10 @@ using System.IO;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    private const float spawnRate = 2.0f;
+    //private const float spawnRate = 2.0f;
     private float spawnRealTime = 0;
     public GameObject enemy;
-    public float dx =17;
+    List<EnemyStatus> enemyDataList = new List<EnemyStatus>();
 
     public TextAsset csvFile;
     List<string[]> csvDatas = new List<string[]>();
@@ -38,18 +38,27 @@ public class SpawnEnemy : MonoBehaviour
     void Start()
     {
         string[] lines = csvFile.text.Replace("\r\n", "\n").Split("\n"[0]);
-        var enemyData = new List<EnemyStatus>();
-        foreach (var line in lines)
+        //var enemyData = new List<EnemyStatus>();
+        bool skilpflag = false;
+        foreach (string line in lines)
         {
+            if (!skilpflag)
+            {
+                skilpflag = true;
+                continue;
+            }
+            if (line.Equals(""))
+            {
+                continue;
+            }
             var ENEMY = new EnemyStatus
             {
-                Enemy = line.Split(',')[0],
-                Duration = int.Parse(line.Split(',')[1]),
-                PositionX = int.Parse(line.Split(',')[2]),
-                PositionY = int.Parse(line.Split(',')[3]),
-                PositionZ = int.Parse(line.Split(',')[4])
+                isSpawned = false,
+                EnemyType = line.Split(',')[0],
+                Duration = float.Parse(line.Split(',')[1]),
+                Position = new Vector3(float.Parse(line.Split(',')[2]), float.Parse(line.Split(',')[3]), float.Parse(line.Split(',')[4]))  
             };
-            enemyData.Add(ENEMY);
+            enemyDataList.Add(ENEMY);
         }
     }
 
@@ -57,17 +66,35 @@ public class SpawnEnemy : MonoBehaviour
     void Update()
     {
         spawnRealTime += Time.deltaTime;
-        if (spawnRealTime >= spawnRate)
+        for(int i = 0; i < enemyDataList.Count; i++)
         {
-            spawnNewEnemy();
-            spawnRealTime = 0;
+            if (spawnRealTime >= enemyDataList[i].Duration)
+            {
+                if (enemyDataList[i].isSpawned == false)
+                {
+                    spawnNewEnemy(enemyDataList[i].Position, enemyDataList[i].EnemyType);
+                    enemyDataList[i].isSpawned = true;
+                }
+            }
         }
+        
     }
 
-
-    void spawnNewEnemy()
+    void spawnNewEnemy(Vector3 position,string Type)
     {
-        GameObject newenemy = Instantiate(enemy, new Vector3(dx,0,0), Quaternion.identity);
+        GameObject newenemy = Instantiate(enemy, position, Quaternion.identity);
+        Enemy newEnemyComponent = newenemy.GetComponent<Enemy>();
+        if (newEnemyComponent != null)
+        {
+            if (Type.Equals("UP"))
+            {
+                newenemy.GetComponent<Enemy>().setType(Enemy.TYPE.UP);
+            }
+            else if (Type.Equals("DOWN"))
+            {
+                newenemy.GetComponent<Enemy>().setType(Enemy.TYPE.DOWN);
+            }
+        }
     }
 }
 

@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+
 public class Enemy : BaseCharacter
 {
     private const float shotRate = 0.5f;//ŒÅ’è‚Ì’l
     private float shotRealTime = 0;
-    
 
-    
+    public enum TYPE
+    {
+        UP,
+        DOWN
+    }
+
+    [SerializeField]
+    private TYPE mType;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +35,21 @@ public class Enemy : BaseCharacter
             shot(Direction.LEFT);
             shotRealTime = 0;
         }
-        moveDirection.x = -1;
-        moveDirection.y = 1;
+        switch (mType)
+        {
+            case TYPE.UP:
+                moveDirection.x = -1;
+                moveDirection.y = 1;
+                break;
+            case TYPE.DOWN:
+                moveDirection.x = -1;
+                moveDirection.y = -1;
+                break;
+        }
+        //moveDirection.x = -1;
+        //moveDirection.y = 1;
         moveDirection.Normalize();
+        //mType = getType();
         transform.position += moveDirection * speed * Time.deltaTime;
         lifeTime -= Time.deltaTime;
         if (lifeTime <= 0)
@@ -37,6 +57,15 @@ public class Enemy : BaseCharacter
             Destroy(this.gameObject);
         }
     }
+    
+    public void setType(TYPE type)
+    {
+        mType = type;
+    }
 
+    public TYPE getType()
+    {
+        return mType;
+    }
     
 }

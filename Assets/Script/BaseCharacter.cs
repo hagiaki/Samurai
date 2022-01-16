@@ -28,10 +28,10 @@ public class BaseCharacter : MonoBehaviour
         ENEMY
     }
 
-    public enum Height{
+    /*public enum Height{
         UP,
         DOWN
-    }
+    }*/
 
     protected void shot(Direction direction)
     {

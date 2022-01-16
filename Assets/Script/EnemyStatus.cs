@@ -1,8 +1,11 @@
-﻿public class EnemyStatus
+﻿using UnityEngine;
+public class EnemyStatus
 {
-    public string Enemy { get; set; }
-    public int Duration { get; set; }
-    public int PositionX { get; set; }
+    public bool isSpawned { get; set; }
+    public string EnemyType { get; set; }
+    public float Duration { get; set; }
+    public Vector3 Position { get; set; }
+    /*public int PositionX { get; set; }
     public int PositionY { get; set; }
-    public int PositionZ { get; set; }
+    public int PositionZ { get; set; }*/
 }
