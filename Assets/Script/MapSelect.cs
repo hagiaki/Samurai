@@ -40,6 +40,8 @@ public class MapSelect : MapList
     //public Button Map1 = GameObject.Find("/Camvas/ButtonMap1").GetComponent<Button>();
     //public Button Map2 = GameObject.Find("/Camvas/ButtonMap2").GetComponent<Button>();
 
+    public static TextAsset csvFile;
+
     void Start()
     {
         
@@ -50,11 +52,13 @@ public class MapSelect : MapList
         if ("ButtonMap1".Equals(objectName))
         {
             this.Map1Click();
+            csvFile = Resources.Load("SpawnData/Map_01") as TextAsset;
             LoadingNewScene();
         }
         else if ("ButtonMap2".Equals(objectName))
         {
             this.Map2Click();
+            csvFile = Resources.Load("SpawnData/Map_02") as TextAsset;
             LoadingNewScene();
         }
     }

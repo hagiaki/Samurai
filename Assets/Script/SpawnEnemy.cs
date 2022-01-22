@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class SpawnEnemy : MonoBehaviour
+public class SpawnEnemy : MapSelect
 {
     //private const float spawnRate = 2.0f;
     private float spawnRealTime = 0;
     public GameObject enemy;
     List<EnemyStatus> enemyDataList = new List<EnemyStatus>();
 
-    public TextAsset csvFile;
-    List<string[]> csvDatas = new List<string[]>();
+    //public TextAsset csvFile;
+    //List<string[]> csvDatas = new List<string[]>();
 
     //static TextAsset csvData;
     //List<string[]> csvDatas = new List<string[]>();//可変長配列。先頭だけ表示され、その次のメモリのみわかる。動的な配列
