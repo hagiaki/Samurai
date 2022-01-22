@@ -40,6 +40,7 @@ public class SpawnEnemy : MonoBehaviour
         string[] lines = csvFile.text.Replace("\r\n", "\n").Split("\n"[0]);
         //var enemyData = new List<EnemyStatus>();
         bool skilpflag = false;
+
         foreach (string line in lines)
         {
             if (!skilpflag)

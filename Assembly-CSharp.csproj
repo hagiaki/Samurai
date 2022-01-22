@@ -66,10 +66,11 @@
     <Compile Include="Assets\Script\EnemyStatus.cs" />
     <Compile Include="Assets\Script\Shell.cs" />
     <Compile Include="Assets\Script\PlayerSource.cs" />
-    <Compile Include="Assets\Script\Player.cs" />
-    <Compile Include="Assets\Script\Back.cs" />
-    <Compile Include="Assets\Script\Title.cs" />
     <Compile Include="Assets\Script\MapSelect.cs" />
+    <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\Script\Title.cs" />
+    <Compile Include="Assets\Script\Back.cs" />
+    <Compile Include="Assets\Script\MapList.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

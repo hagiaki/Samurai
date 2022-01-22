@@ -770,7 +770,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1996,7 +1996,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 834900766044590813, guid: d68401537f43a4248b6382b6dbdb26b9, type: 3}
-  dx: 17
   csvFile: {fileID: 4900000, guid: 8c9a027592c128c488da75cee710f5d3, type: 3}
 --- !u!4 &1936750917
 Transform:
