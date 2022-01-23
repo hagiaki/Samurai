@@ -37,6 +37,11 @@ public class SpawnEnemy : MapSelect
     // Start is called before the first frame update
     void Start()
     {
+        if (csvFile == null)
+        {
+            csvFile = Resources.Load("SpawnData/Map_01") as TextAsset;
+            Debug.LogError("csvファイルが選択されていません");
+        }
         string[] lines = csvFile.text.Replace("\r\n", "\n").Split("\n"[0]);
         //var enemyData = new List<EnemyStatus>();
         bool skilpflag = false;
